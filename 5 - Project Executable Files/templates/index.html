@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel ="stylesheet" href="/static/CSS/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Autistic Disorder Predictor</title>
+  </head>
+  <body class = "bg-danger">
+
+    <div class="container">
+      <div class="row">
+        <div class="card mt-50" style="width: 100%; height: 100%">
+          <div class="card-header">
+              <div class="col-12" style="text-align:center">
+                <h1>Welcome to Autistic disorer Predictor</h1>
+              </div>
+          </div>
+          <div class="card-body">
+
+            <form method="post"  accept-charset="utf-8" action="{{ url_for('predict')}}">
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>A1_Score: </b></label>
+                <input class="form-control" type="text" id="A1_Score" name="A1_Score" placeholder="Enter A1 score">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>A2_Score: </b></label>
+                <input class="form-control" type="text" id="A2_Score" name="A2_Score" placeholder="Enter A2 score">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>A3_Score: </b></label>
+                <input class="form-control" type="text" id="A3_Score" name="A3_Score" placeholder="Enter A3 score">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>A4_Score: </b></label>
+                <input class="form-control" type="text" id="A4_Score" name="A4_Score" placeholder="Enter A4 score">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>A5_Score: </b></label>
+                <input class="form-control" type="text" id="A5_Score" name="A5_Score" placeholder="Enter A5 score">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>A6_Score: </b></label>
+                <input class="form-control" type="text" id="A6_Score" name="A6_Score" placeholder="Enter A6 score">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>A7_Score: </b></label>
+                <input class="form-control" type="text" id="A7_Score" name="A7_Score" placeholder="Enter A7 score">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>A8_Score: </b></label>
+                <input class="form-control" type="text" id="A8_Score" name="A8_Score" placeholder="Enter A8 score">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>A9_Score: </b></label>
+                <input class="form-control" type="text" id="A9_Score" name="A9_Score" placeholder="Enter A9 score">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>A10_Score: </b></label>
+                <input class="form-control" type="text" id="A10_Score" name="A10_Score" placeholder="Enter A10 score">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>age: </b></label>
+                <input class="form-control" type="text" id="age" name="age" placeholder="Enter age">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>result: </b></label>
+                <input class="form-control" type="text" id="result" name="result" placeholder="Enter result">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>m: </b></label>
+                <input class="form-control" type="text" id="m" name="m" placeholder="Enter Sex">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>Had_jaundice_yes: </b></label>
+                <input class="form-control" type="text" id="Had_jaundice_yes" name="Had_jaundice_yes" placeholder="Enter Had jaundice or not">
+              </div>
+              
+              <div class="col-10 form-group" style="text-align: center">
+                <label><b>Rel_had_yes: </b></label>
+                <input class="form-control" type="text" id="Rel_had_yes" name="Rel_had_yes" placeholder="Enter Had relation or not">
+              </div>
+
+              <div class="col-10 form-group " style="text-align: center">
+                <button class="btn btn-primary form-control btn btn-danger" onclick="send_data()">Predict</button>
+              </div>
+
+            </form>
+            <br>
+            <br>
+            <br>
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
